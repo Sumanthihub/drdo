@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./image.css" />
+  </head>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.img-div {
+  width: 67rem;
+  height: fit-content;
+  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.img {
+  width: 500px;
+  object-fit: cover;
+  height: 350px;
+}
+.outer-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  height: max-content;
+}
+header {
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 30px;
+  /* height: 49px; */
+}
+
+  </style>
+  <body>
+    <header>
+      <img src=" {{ url_for('static', filename='images/hubdata-logo.png') }}" alt="" width="54px" />
+      <img src=" {{ url_for('static', filename='images/second-logo.png') }}" alt="" width="54px" />
+    </header>
+    <div class="outer-div">
+      <div class="img-div">
+      <img src="{{ url_for('static', filename=filename1)}}" alt="" width="33%" />
+      <img src="{{ url_for('static', filename=filename2 )}}" alt="" width="33%"/>
+      <!--<img src="{{ url_for('static', filename=filename3 )}}" alt="" width="33%" style="margin-left: 5px;"/> -->
+
+     <!-- <img src="/static/original/14_rain_mr_OCTOBER_1_rgb_leftImg8bit.png" alt="" width="33%" />
+      <img src="/static/predections/14_rain_mr_OCTOBER_1_rgb_leftImg8bit.png" alt="" width="33%"/>
+      <img src="/static/seg/14_rain_mr_OCTOBER_1_rgb_leftImg8bit.png" alt="" width="33%" style="margin-left: 5px;"/> -->
+
+        <!-- <img src=" {{ url_for('static', filename='images/image.png') }}" class="img" alt="" />
+        <img src=" {{ url_for('static', filename='images/image.png') }}" class="img" alt="" /> -->
+      </div>
+    </div>
+  </body>
+</html>

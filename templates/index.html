@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./upload.css" />
+  </head>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.outer-div {
+  position: relative;
+  /* width: 80vw; */
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+.upload-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 382px;
+  background: pink;
+}
+header {
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 30px;
+}
+header h5 {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+}
+.btn {
+  padding: 12px 32px;
+  background: linear-gradient(33deg, transparent, black);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  position: absolute;
+  bottom: 42px;
+  transition: 0.3s !important;
+  cursor: pointer;
+}
+.btn:hover {
+  background: linear-gradient(45deg, black, transparent);
+}
+input {
+  font-size: 20px;
+}
+#myFile {
+  visibility: hidden;
+}
+label {
+  background: greenyellow;
+  padding: 20px 25px;
+  border-radius: 15px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+label:hover {
+  background: #f2ff2f;
+  transition: 0.7s;
+}
+.ext-links {
+  width: fit-content;
+  margin: 50px auto;
+  padding: 10px 25px;
+  background: blue;
+}
+.ext-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+  </style>
+  <body>
+    <header>
+      <img src=" {{ url_for('static', filename='images/hubdata-logo.png') }}" alt="" width="54px" />
+      <img src=" {{ url_for('static', filename='images/second-logo.png') }}" alt="" width="54px" />
+    </header>
+    <div class="outer-div">
+        <form method="POST" enctype="multipart/form-data" action="/upload">
+
+      <div class="upload-div" >
+        <input id="myFile" type="file" name="file" />
+        <label for="myFile">Choose File</label>
+        <button class="btn" >Upload</button>
+      </div>
+            </form>
+
+    </div>
+    <div class="ext-links">
+      <a id="video" href="http://127.0.0.0:5005/video"></a>
+      <a id="image" href="http://127.0.0.0:5005/image"></a>
+    </div>
+    <script>
+      function fnGetExtension() {
+        var vid = document.getElementById("video");
+        var img = document.getElementById("image");
+
+        var fileInput = document.getElementById("myFile");
+        var fileName = fileInput.files[0].name;
+
+        var patternFileExtension = /\.([0-9a-z]+)(?:[\?#]|$)/i;
+
+        var fileExtension = fileName.match(patternFileExtension);
+
+        if (fileExtension == ".png,png" || fileExtension == ".jpg,jpg") {
+          img.innerHTML = "Image";
+        } else if (fileExtension == ".mp4,mp4") {
+          vid.innerHTML = "Video";
+        }else{
+          vid.innerHTML = "Video";
+        }
+      }
+    </script>
+  </body>
+</html>

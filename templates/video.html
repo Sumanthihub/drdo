@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./video.css" />
+  </head>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.video-div {
+  margin-top: 120px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+header {
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 30px;
+}
+video {
+  width: 400px;
+  height: 350px;
+}
+  </style>
+  <body>
+    <header>
+      <img src=" {{ url_for('static', filename='images/hubdata-logo.png') }}" alt="" width="54px" />
+      <img src=" {{ url_for('static', filename='images/second-logo.png') }}" alt="" width="54px" />
+    </header>
+    <div class="outer-div">
+      <div class="video-div">
+        <!-- <iframe src="https://iiitaphyd-my.sharepoint.com/personal/sumanth_reddy_ihub-data_iiit_ac_in/_layouts/15/embed.aspx?UniqueId=64d7a62e-ef57-4b0c-8e28-4db8bce2892e&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Raw.avi"></iframe>
+        <iframe src="https://iiitaphyd-my.sharepoint.com/personal/sumanth_reddy_ihub-data_iiit_ac_in/_layouts/15/embed.aspx?UniqueId=6eddfcb4-b43b-4b39-b181-2a7f7c124ff0&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Derain.avi"></iframe>
+        <iframe src="https://iiitaphyd-my.sharepoint.com/personal/sumanth_reddy_ihub-data_iiit_ac_in/_layouts/15/embed.aspx?UniqueId=4024168e-65f6-4317-a83a-85d4f176d064&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="segmentation.mp4"></iframe> -->
+        <!-- <iframe src="https://iiitaphyd-my.sharepoint.com/personal/sumanth_reddy_ihub-data_iiit_ac_in/_layouts/15/embed.aspx?UniqueId=64d7a62e-ef57-4b0c-8e28-4db8bce2892e&nav=%7B%22playbackOptions%22%3A%7B%22startTimeInSeconds%22%3A120%7D%7D&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="raw_video.avi"></iframe>
+        <iframe src="https://iiitaphyd-my.sharepoint.com/personal/sumanth_reddy_ihub-data_iiit_ac_in/_layouts/15/embed.aspx?UniqueId=6eddfcb4-b43b-4b39-b181-2a7f7c124ff0&nav=%7B%22playbackOptions%22%3A%7B%22startTimeInSeconds%22%3A120%7D%7D&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="derain.avi"></iframe>
+        <iframe src="https://iiitaphyd-my.sharepoint.com/personal/sumanth_reddy_ihub-data_iiit_ac_in/_layouts/15/embed.aspx?UniqueId=4024168e-65f6-4317-a83a-85d4f176d064&nav=%7B%22playbackOptions%22%3A%7B%22startTimeInSeconds%22%3A120%7D%7D&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="segmentation.mp4"></iframe> -->
+        <video autoplay="true" controls>
+          <source src="{{ url_for('static', filename=filename1)}}" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <video autoplay="true" controls>
+          <source src="{{ url_for('static', filename=filename2)}}" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+      </div>
+    </div>
+  </body>
+</html>
